@@ -9,29 +9,26 @@ A robust, enterprise-grade test automation framework built with [Playwright](htt
 ### 1. Project Directory Structure
 
 ```text
-Exercise-Test/
-├── playwright-framework/                   # Core Playwright automation suite
-│   ├── .github/workflows/
-│   │   └── playwright.yml                  # GitHub Actions CI workflow
-│   ├── page-objects/                       # Page Object Model (POM) layer
-│   │   ├── base.page.ts                    # Shared base page behaviors & common helpers
-│   │   ├── HomePage.ts                     # Encapsulated locators & actions for Home & Navigation
-│   │   ├── CartPage.ts                     # Locators & actions for Cart, Orders & SweetAlert modal
-│   │   └── home.page.ts                    # Modular home page utilities
-│   ├── tests/                              # Categorized test specifications
-│   │   ├── ui/                             # End-to-End UI functional & edge-case test suites
-│   │   │   ├── demoblaze.spec.ts           # Authentication (6 TCs) & Core Cart Checkout (4 TCs)
-│   │   │   └── demoblaze_cart_advanced.spec.ts # Advanced multi-product & persistence tests (POM)
-│   │   ├── api/                            # API integration & contract tests
-│   │   │   └── demoblaze_api.spec.ts       # Endpoint checks (/entries, /login)
-│   │   └── performance/                    # Performance benchmarks & navigation metrics
-│   │       └── load.spec.ts                # Page load time SLA validation
-│   ├── playwright.config.ts                # Global configurations (browsers, workers, reporters, retries)
-│   ├── tsconfig.json                       # TypeScript compiler options
-│   └── package.json                        # Dependencies & automation run scripts
-├── TestCases_DemoBlaze_Master_Report.xlsx  # Comprehensive Test Case Matrix & Execution Report
-├── generate_master_excel.js                # Automated Excel reporting generator script
-└── README.md                               # Project documentation & execution guide
+playwright-framework/
+├── .github/workflows/
+│   └── playwright.yml                  # GitHub Actions CI workflow
+├── page-objects/                       # Page Object Model (POM) layer
+│   ├── base.page.ts                    # Shared base page behaviors & common helpers
+│   ├── HomePage.ts                     # Encapsulated locators & actions for Home & Navigation
+│   ├── CartPage.ts                     # Locators & actions for Cart, Orders & SweetAlert modal
+│   └── home.page.ts                    # Modular home page utilities
+├── tests/                              # Categorized test specifications
+│   ├── ui/                             # End-to-End UI functional & edge-case test suites
+│   │   ├── demoblaze.spec.ts           # Authentication (6 TCs) & Core Cart Checkout (4 TCs)
+│   │   └── demoblaze_cart_advanced.spec.ts # Advanced multi-product & persistence tests (POM)
+│   ├── api/                            # API integration & contract tests
+│   │   └── demoblaze_api.spec.ts       # Endpoint checks (/entries, /login)
+│   └── performance/                    # Performance benchmarks & navigation metrics
+│       └── load.spec.ts                # Page load time SLA validation
+├── playwright.config.ts                # Global configurations (browsers, workers, reporters, retries)
+├── tsconfig.json                       # TypeScript compiler options
+├── package.json                        # Dependencies & automation run scripts
+└── README.md                           # Project documentation & execution guide
 ```
 
 ---
@@ -58,7 +55,6 @@ Exercise-Test/
 
 #### E. Traceability & Reporting
 * **Built-in HTML & Video Traces**: Configured to capture full execution traces (`trace: 'on'`), screenshots, and video recordings on retries/failures, enabling root-cause analysis within minutes via Playwright Trace Viewer.
-* **Stakeholder Excel Export**: Includes `generate_master_excel.js` which compiles the test suite into a formatted Excel Master Report (`TestCases_DemoBlaze_Master_Report.xlsx`).
 
 ---
 
@@ -70,12 +66,11 @@ Exercise-Test/
 
 ---
 
-### Step 1: Navigate to the Framework & Install Dependencies
+### Step 1: Install Dependencies
 
-Open a terminal (PowerShell, Command Prompt, or Bash) and navigate to the `playwright-framework` subfolder:
+Open a terminal inside this directory (`playwright-framework`):
 
 ```bash
-cd playwright-framework
 npm install
 ```
 
@@ -154,20 +149,6 @@ When a test fails, open its trace package with Playwright Trace Viewer:
 npx playwright show-trace test-results/<test-folder-name>/trace.zip
 ```
 *Allows scrubbing through DOM snapshots, network waterfalls, console logs, and action timings for every step.*
-
----
-
-### Step 4: (Optional) Generate Master Excel Test Report
-
-From the root project directory (`Exercise-Test`):
-```bash
-# If needed, install exceljs in the root:
-npm install exceljs
-
-# Generate the formatted Excel report:
-node generate_master_excel.js
-```
-The generated file `TestCases_DemoBlaze_Master_Report.xlsx` will be updated with categorized scenarios, execution status, and traceability notes.
 
 ---
 
