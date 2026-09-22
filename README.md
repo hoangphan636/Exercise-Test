@@ -29,8 +29,8 @@ Exercise-Test/
 │   ├── playwright.config.ts                # Global configurations (browsers, workers, reporters, retries)
 │   ├── tsconfig.json                       # TypeScript compiler options
 │   └── package.json                        # Dependencies & automation run scripts
-├── TestCases_DemoBlaze_Master_Report.xlsx  # Comprehensive Test Case Matrix & Execution Report
-├── generate_master_excel.js                # Automated Excel reporting generator script
+├── TestCases_DemoBlaze_Comprehensive_Suite.xlsx # Master Test Case Suite (Login & Cart)
+├── generate_comprehensive_suite.js         # Automated Excel test suite generator
 └── README.md                               # Project documentation & execution guide
 ```
 
@@ -58,7 +58,7 @@ Exercise-Test/
 
 #### E. Traceability & Reporting
 * **Built-in HTML & Video Traces**: Configured to capture full execution traces (`trace: 'on'`), screenshots, and video recordings on retries/failures, enabling root-cause analysis within minutes via Playwright Trace Viewer.
-* **Stakeholder Excel Export**: Includes `generate_master_excel.js` which compiles the test suite into a formatted Excel Master Report (`TestCases_DemoBlaze_Master_Report.xlsx`).
+* **Stakeholder Excel Export**: Includes `generate_comprehensive_suite.js` which compiles the test suite into a formatted Excel Master Report (`TestCases_DemoBlaze_Comprehensive_Suite.xlsx`).
 
 ---
 
@@ -165,9 +165,9 @@ From the root project directory (`Exercise-Test`):
 npm install exceljs
 
 # Generate the formatted Excel report:
-node generate_master_excel.js
+node generate_comprehensive_suite.js
 ```
-The generated file `TestCases_DemoBlaze_Master_Report.xlsx` will be updated with categorized scenarios, execution status, and traceability notes.
+The generated file `TestCases_DemoBlaze_Comprehensive_Suite.xlsx` will be updated with categorized scenarios, execution status, and traceability notes.
 
 ---
 
